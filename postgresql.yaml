@@ -11,7 +11,7 @@ spec:
       database: zonos_oss
       owner: zonos_oss
       dataChecksums: true
-      encoding: 'UTF8'
+      encoding: UTF8
   enableSuperuserAccess: true
   postgresql:
     parameters:
@@ -30,8 +30,8 @@ spec:
       cpu: "1"
       memory: "1Gi"
   storage:
-    size: 5Gi
     storageClass: data_vg
+    size: 5Gi
 
 ---
 
@@ -45,10 +45,10 @@ spec:
   imageName: ghcr.io/cloudnative-pg/postgresql:16.2
   bootstrap:
     initdb:
-      database: zonos_oss
-      owner: zonos_oss
+      database: customer
+      owner: customer
       dataChecksums: true
-      encoding: 'UTF8'
+      encoding: UTF8
   enableSuperuserAccess: true
   postgresql:
     parameters:
@@ -67,5 +67,5 @@ spec:
       cpu: "1"
       memory: "1Gi"
   storage:
-    size: 5Gi
     storageClass: data_vg
+    size: 5Gi
