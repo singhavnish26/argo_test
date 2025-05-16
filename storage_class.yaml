@@ -1,16 +1,16 @@
 apiVersion: storage.k8s.io/v1
+kind: StorageClass
 metadata:
   name: openebs-database
+provisioner: local.csi.openebs.io
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
 allowedTopologies:
   - matchLabelExpressions:
       - key: openebs.io/nodename
         values:
           - k8s.local
-allowVolumeExpansion: true
-provisioner: lkind: StorageClass
-ocal.csi.openebs.io
 parameters:
   storage: "lvm"
   volgroup: "data_vg"
-  fsType: xfs
-volumeBindingMode: WaitForFirstConsumer
+  fsType: "xfs"
